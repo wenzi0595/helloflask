@@ -26,7 +26,7 @@ def hello():
     name = request.args.get('name')
     if name is None:
         name = request.cookies.get('name', 'Human')
-    response = '<h1>Hello, %s!</h1>' % escape(name)  # escape name to avoid XSS
+    response = '<h1>Hello, %s!</h1>' % name  # escape name to avoid XSS
     # return different response according to the user's authentication status
     if 'logged_in' in session:
         response += '[Authenticated]'
